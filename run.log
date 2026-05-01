@@ -1,7 +1,0 @@
-2026-05-02 02:30:11,527 | INFO | Job started
-2026-05-02 02:30:11,528 | INFO | Loading config from config.yaml
-2026-05-02 02:30:11,529 | INFO | Config loaded: version=v1, seed=42, window=5
-2026-05-02 02:30:11,533 | INFO | Dataset loaded: rows=20
-2026-05-02 02:30:11,535 | INFO | Rolling mean computed
-2026-05-02 02:30:11,537 | INFO | Signal computed
-2026-05-02 02:30:11,537 | INFO | Final metrics: {'version': 'v1', 'rows_processed': 20, 'metric': 'signal_rate', 'value': 0.5625, 'latency_ms': 11, 'seed': 42, 'status': 'success'}
