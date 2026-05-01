@@ -11,6 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY run.py .
 COPY config.yaml .
 COPY data.csv .
-COPY pipeline_app ./pipeline_app
 
 CMD ["python", "run.py", "--input", "data.csv", "--config", "config.yaml", "--output", "metrics.json", "--log-file", "run.log"]
