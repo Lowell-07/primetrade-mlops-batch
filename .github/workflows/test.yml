@@ -21,8 +21,32 @@ jobs:
       - name: Type check
         run: mypy run.py --ignore-missing-imports
         
-      - name: Run pipeline
-        run: python run.py --input data.csv --config config.yaml --output metrics.json --log-file run.log
-        
-      - name: Verify metrics output
-        run: cat metrics.json
+      - name: Test happy path
+        run: |
+          python run.py --input data.csv --config config.yaml --output metrics.json --log-file run.log
+          cat metrics.json
+          
+      - name: Test missing file
+        run: |
+          python run.py --input missing.csv --config config.yaml --output error.json --log-file error.log || true
+          cat error.json
+          
+      - name: Test missing close column
+        run: |
+          echo "a,b,c" > bad.csv
+          echo "1,2,3" >> bad.csv
+          python run.py --input bad.csv --config config.yaml --output error2.json --log-file error2.log || true
+          cat error2.json
+          
+      - name: Verify schema exactness
+        run: |
+          python -c "
+          import json
+          with open('metrics.json') as f:
+              m = json.load(f)
+          required = {'version', 'rows_processed', 'metric', 'value', 'latency_ms', 'seed', 'status'}
+          assert required.issubset(m.keys()), f'Missing keys: {required - set(m.keys())}'
+          assert m['status'] == 'success'
+          assert m['metric'] == 'signal_rate'
+          print('Schema OK')
+          "

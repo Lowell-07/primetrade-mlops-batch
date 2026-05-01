@@ -1,14 +1,9 @@
-# Runtime outputs
 metrics.json
 run.log
 *.log
-
-# Build artifacts
 __pycache__/
 *.egg-info/
 dist/
 build/
-
-# Virtual environments
 venv/
 .env/
