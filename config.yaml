@@ -1,0 +1,5 @@
+version: "v2"
+window: 5
+min_rows_required: 5
+max_invalid_close_ratio: 0.1
+timestamp_column: "date"

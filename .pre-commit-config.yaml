@@ -4,12 +4,9 @@ repos:
     hooks:
       - id: black  # Auto-formats Python code
 
-  - repo: https://github.com/PyCQA/flake8
-    rev: 7.0.0
-    hooks:
-      - id: flake8  # Catches syntax errors, unused imports
-
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
+    rev: v1.15.0
     hooks:
-      - id: mypy  # Type checking
+      - id: mypy
+        additional_dependencies:
+          - types-PyYAML

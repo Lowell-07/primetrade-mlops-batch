@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "version": "v2",
+  "run_id": "f368c0c1-b844-41da-805d-cd6ec874eb7e",
+  "dataset_hash": "8687f85588cb23bce94147b3559f07eb96910db13131f7000f2fed6040f79535",
+  "config_hash": "fb0c51c31b92b3a3412123418848ed7c759fc59301d04f187f7f23900c71d2eb",
+  "metric": "signal_rate",
+  "value": 0.5625,
+  "signal_rate": 0.5625,
+  "data_quality_score": 1.0,
+  "coverage": 0.8,
+  "rows_input": 20,
+  "rows_valid": 20,
+  "rows_dropped": 0,
+  "rows_used": 16,
+  "warnings_count": 0,
+  "latency_ms": 25
+}
